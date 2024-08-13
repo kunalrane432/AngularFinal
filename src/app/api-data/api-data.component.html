@@ -1,0 +1,13 @@
+<div *ngIf="characters.length > 0">
+  <h2>Rick and Morty Characters</h2>
+  <ul>
+    <li *ngFor="let character of characters">
+      <img [src]="character.image" alt="{{ character.name }}">
+      <strong>{{ character.name }}</strong> - {{ character.species }}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="characters.length === 0">
+  <p>No characters found or loading...</p>
+</div>
