@@ -1,34 +1,39 @@
-<!-- feedback.component.html -->
-<form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="name">Name:</label>
-    <input id="name" formControlName="name">
-    <div *ngIf="feedbackForm.get('name')?.invalid && feedbackForm.get('name')?.touched">
+<form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" style="max-width: 400px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; background-color: #f9f9f9;">
+  <div style="margin-bottom: 15px;">
+    <label for="name" style="display: block; font-weight: bold; margin-bottom: 5px;">Name:</label>
+    <input id="name" formControlName="name" style="width: 100%; padding: 8px; box-sizing: border-box; border-radius: 5px; border: 1px solid #ccc;">
+    <div *ngIf="feedbackForm.get('name')?.invalid && feedbackForm.get('name')?.touched" style="color: red; font-size: 0.9em;">
       Name is required
     </div>
   </div>
 
-  <div>
-    <label for="email">Email:</label>
-    <input id="email" formControlName="email">
-    <div *ngIf="feedbackForm.get('email')?.invalid && feedbackForm.get('email')?.touched">
-      <div *ngIf="feedbackForm.get('email')?.errors?.['required']">Email is required</div>
-      <div *ngIf="feedbackForm.get('email')?.errors?.['email']">Invalid email format</div>
+  <div style="margin-bottom: 15px;">
+    <label for="email" style="display: block; font-weight: bold; margin-bottom: 5px;">Email:</label>
+    <input id="email" formControlName="email" style="width: 100%; padding: 8px; box-sizing: border-box; border-radius: 5px; border: 1px solid #ccc;">
+    <div *ngIf="feedbackForm.get('email')?.invalid && feedbackForm.get('email')?.touched" style="color: red; font-size: 0.9em;">
+      <div *ngIf="feedbackForm.get('email')?.errors?.['required']">
+        Email is required
+      </div>
+      <div *ngIf="feedbackForm.get('email')?.errors?.['email']">
+        Invalid email format
+      </div>
     </div>
   </div>
 
-  <div>
-    <label for="message">Message:</label>
-    <textarea id="message" formControlName="message"></textarea>
-    <div *ngIf="feedbackForm.get('message')?.invalid && feedbackForm.get('message')?.touched">
+  <div style="margin-bottom: 15px;">
+    <label for="message" style="display: block; font-weight: bold; margin-bottom: 5px;">Message:</label>
+    <textarea id="message" formControlName="message" style="width: 100%; padding: 8px; box-sizing: border-box; border-radius: 5px; border: 1px solid #ccc;"></textarea>
+    <div *ngIf="feedbackForm.get('message')?.invalid && feedbackForm.get('message')?.touched" style="color: red; font-size: 0.9em;">
       Message is required
     </div>
   </div>
 
-  <button type="submit">Submit</button>
+  <button type="submit" style="width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+    Submit
+  </button>
 </form>
 
 <!-- Success message -->
-<div *ngIf="successMessage" class="success-message">
+<div *ngIf="successMessage" class="success-message" style="max-width: 400px; margin: 20px auto; padding: 10px; background-color: #dff0d8; color: #3c763d; border: 1px solid #d6e9c6; border-radius: 5px; text-align: center;">
   {{ successMessage }}
 </div>
