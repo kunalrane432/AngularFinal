@@ -4,10 +4,10 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-root',
   template: `
-    <nav>
-      <a routerLink="/">Home</a>
-      <a routerLink="/api-data">API Data</a>
-      <a routerLink="/form">Form</a>
+    <nav style="background-color: #333; padding: 1rem; display: flex; justify-content: space-around;">
+      <a routerLink="/" style="color: #fff; text-decoration: none; font-size: 1.2rem;">Home</a>
+      <a routerLink="/api-data" style="color: #fff; text-decoration: none; font-size: 1.2rem;">API Data</a>
+      <a routerLink="/form" style="color: #fff; text-decoration: none; font-size: 1.2rem;">Form</a>
     </nav>
     <router-outlet></router-outlet>
   `,

@@ -11,13 +11,14 @@ import { NgFor, NgIf } from '@angular/common';
 })
 export class ApiDataComponent implements OnInit {
   characters: any[] = [];
+  
 
   constructor(private rickAndMortyService: RickAndMortyService) {}
 
   ngOnInit(): void {
     this.rickAndMortyService.getCharacters().subscribe(
       (data) => {
-        console.log(data);  // Add this line to inspect the returned data
+        console.log(data);  
         this.characters = data.results;
       },
       (error) => {
