@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class FormComponent {
   feedbackForm: FormGroup;
-
+  successMessage: string = '';
   constructor(private fb: FormBuilder) {
     this.feedbackForm = this.fb.group({
       name: ['', Validators.required],
@@ -22,8 +22,11 @@ export class FormComponent {
   onSubmit(): void {
     if (this.feedbackForm.valid) {
       console.log('Form Submitted', this.feedbackForm.value);
+      this.successMessage = 'Your feedback has been successfully submitted!';
+      this.feedbackForm.reset();
     } else {
       console.log('Form is invalid');
+      this.successMessage = '';
     }
   }
 }

@@ -1,3 +1,4 @@
+<!-- feedback.component.html -->
 <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="name">Name:</label>
@@ -26,3 +27,8 @@
 
   <button type="submit">Submit</button>
 </form>
+
+<!-- Success message -->
+<div *ngIf="successMessage" class="success-message">
+  {{ successMessage }}
+</div>
